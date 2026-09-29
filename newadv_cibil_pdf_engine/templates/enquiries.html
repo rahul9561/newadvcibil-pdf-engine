@@ -1,0 +1,28 @@
+<h2 class="section-heading">Enquiry Details</h2>
+{% if enquiries %}
+<p class="note">(e) Indicates the value provided by bank when you applied for a credit facility.</p>
+<div class="card">
+  {% for enq in enquiries %}
+  <div class="card-row">
+    <div class="card-cell">
+      <span class="detail-label">Member Name</span>
+      <span class="detail-value">{{ enq.member_name }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">Date Of Enquiry</span>
+      <span class="detail-value">{{ enq.date_of_enquiry }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">Enquiry Purpose</span>
+      <span class="detail-value">{{ enq.purpose_label }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">Enquiry Amount</span>
+      <span class="detail-value">{{ enq.amount }}</span>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">No enquiries are reported for this consumer.</div>
+{% endif %}

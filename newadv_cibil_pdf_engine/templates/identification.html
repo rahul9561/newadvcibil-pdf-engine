@@ -1,0 +1,27 @@
+<h2 class="section-heading">Identification Details</h2>
+{% if consumer.identifications %}
+<div class="card">
+  {% for id in consumer.identifications %}
+  <div class="card-row">
+    <div class="card-cell">
+      <span class="detail-label">Identification Type</span>
+      <span class="detail-value">{{ id.id_type_label }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">ID Number</span>
+      <span class="detail-value">{{ id.id_number }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">Issue Date</span>
+      <span class="detail-value">{{ id.issue_date }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">Expiry Date</span>
+      <span class="detail-value">{{ id.expiry_date }}</span>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">No identification details are available.</div>
+{% endif %}

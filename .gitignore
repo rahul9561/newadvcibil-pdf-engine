@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+tests/output/*.pdf
+analysis/
+input/sample copy.json
+convertapi.py

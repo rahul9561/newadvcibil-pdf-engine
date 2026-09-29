@@ -1,0 +1,57 @@
+<title>CIBIL Report</title>
+<style>
+  /* Page geometry measured off the reference PDF (A4, 42.5pt = 15mm side
+     margins; running header text at ~26pt, footer text at ~802pt). */
+  @page {
+    size: A4;
+    margin: 48pt 42.5pt 56pt 42.5pt;
+
+    @top-left {
+      content: "{{ generated_at }}";
+      font-family: 'Roboto', 'DejaVu Sans', Arial, sans-serif;
+      font-size: 7.3pt;
+      color: #6b7280;
+      vertical-align: top;
+      padding-top: 25.9pt;
+    }
+    @top-center {
+      content: "CIBIL Report";
+      font-family: 'Roboto', 'DejaVu Sans', Arial, sans-serif;
+      font-size: 7.3pt;
+      color: #6b7280;
+      vertical-align: top;
+      padding-top: 25.9pt;
+    }
+    {% if include_footer %}
+    @bottom-left {
+      content: "TransUnion CIBIL report";
+      font-family: 'Roboto', 'DejaVu Sans', Arial, sans-serif;
+      font-size: 7.3pt;
+      color: #6b7280;
+      vertical-align: top;
+      padding-top: 16.3pt;
+    }
+    @bottom-right {
+      content: counter(page) "/" counter(pages);
+      font-family: 'Roboto', 'DejaVu Sans', Arial, sans-serif;
+      font-size: 7.3pt;
+      color: #6b7280;
+      vertical-align: top;
+      padding-top: 16.3pt;
+    }
+    {% endif %}
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'DejaVu Sans', Arial, sans-serif;
+    font-size: 9pt;
+    color: #26282b;
+    line-height: normal;
+    /* The reference PDF (ReportLab) applies no kerning. */
+    font-kerning: none;
+  }
+</style>
+<style>{{ report_css | safe }}</style>

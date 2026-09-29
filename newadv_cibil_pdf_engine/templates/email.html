@@ -1,0 +1,17 @@
+<h2 class="section-heading">Email Details</h2>
+{% if contact.emails %}
+<div class="tint avoid-break">
+  <div class="card">
+    {% for email in contact.emails %}
+    <div class="card-row">
+      <div class="card-cell">
+        <span class="detail-label">Email ID</span>
+        <span class="detail-value">{{ email.address }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% else %}
+<div class="empty-state">No email details are available.</div>
+{% endif %}

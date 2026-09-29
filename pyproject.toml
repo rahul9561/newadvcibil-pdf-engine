@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "newadv-cibil-pdf-engine"
+version = "2.0.0"
+description = "Reusable JSON -> PDF rendering engine for CIBIL-style credit reports (B2C-REPORT and TransUnion TrueLink JSON)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Proprietary" }
+dependencies = [
+    "Jinja2>=3.1",
+    "weasyprint>=60",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pypdf>=4"]
+
+[project.scripts]
+newadv-cibil-pdf-engine = "newadv_cibil_pdf_engine.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["newadv_cibil_pdf_engine*"]
+
+[tool.setuptools.package-data]
+newadv_cibil_pdf_engine = ["templates/*.html", "static/css/*.css", "static/logo/*.svg", "static/fonts/*.ttf", "static/fonts/*.txt"]

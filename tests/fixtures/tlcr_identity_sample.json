@@ -1,0 +1,660 @@
+{
+  "data": {
+    "steps": [
+      {
+        "name": "FulfillOffer",
+        "step": 1,
+        "status": "success",
+        "response": {
+          "FulfillOfferResponse": {
+            "ResponseKey": "49163e80ab896199:-577439c4:1a09e25bd0a:70ee",
+            "ResponseStatus": "Success",
+            "FulfillOfferSuccess": { "Status": "Success" }
+          }
+        },
+        "http_code": 200
+      },
+      {
+        "name": "GetAuthenticationQuestions",
+        "step": 2,
+        "status": "success",
+        "response": {
+          "GetAuthenticationQuestionsResponse": {
+            "ResponseKey": "1e96dfdc34780170:-48552914:1a09e24ed77:7498",
+            "ResponseStatus": "Success",
+            "GetAuthenticationQuestionsSuccess": {
+              "IVStatus": "Success",
+              "ChallengeConfigGUID": "292029"
+            }
+          }
+        },
+        "http_code": 200
+      },
+      {
+        "name": "GetCustomerAssets",
+        "step": 3,
+        "status": "success",
+        "response": {
+          "GetCustomerAssetsResponse": {
+            "ResponseKey": "9a429ff64470b4d7:-3a0eb118:1a09e2d5948:4c87",
+            "ResponseStatus": "Success",
+            "GetCustomerAssetsSuccess": {
+              "Asset": {
+                "Type": "SingleCreditReport",
+                "Status": "Active",
+                "AssetId": "31146024701",
+                "CreationDate": "2026-09-13T20:25:01.067+05:30",
+                "ExpirationDate": "2028-09-12T20:25:01.066+05:30",
+                "SafetyCheckFailure": false,
+                "TrueLinkCreditReport": {
+                  "Frozen": "",
+                  "Message": {
+                    "Code": {
+                      "rank": "100000",
+                      "symbol": "",
+                      "description": "",
+                      "abbreviation": ""
+                    },
+                    "Type": {
+                      "rank": "100000",
+                      "symbol": "ZZ",
+                      "description": "",
+                      "abbreviation": ""
+                    },
+                    "text": ""
+                  },
+                  "Sources": {
+                    "Source": {
+                      "Bureau": {
+                        "rank": "100000",
+                        "symbol": "CIBIL",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "InquiryDate": "2026-09-13T20:25:01.000+05:30",
+                      "OriginalData": "eyJjb250cm9sRGF0YSI6eyJzdWNjZXNzIjp0cnVlfSwicmVzcG9uc2VUeXBlIjoiSElUIiwiSUNSU19TdWJqZWN0SW5xdWlyeUJ5VFVFRl9SZXNwb25zZSI6eyJoZWFkZXIiOnsibXNnUmVmTnVtIjoiMTE1YTQ4M2EtM2FhMi00OGQ5LThjNzctNTE2YzYzMjY0ZjE2In0sInN1Y2Nlc3MiOnRydWUsInRpbWVzdGFtcCI6IjIwMjYtMDktMTNUMjA6MjU6MDErMDUzMCIsImR1cGxpY2F0ZWRJbnF1aXJ5IjpmYWxzZSwiZWNuIjoxMTYzNTQ3NTYyNywiZmlyc3RFY24iOjExMzI0MjUyNDQ2LCJzdWJqZWN0UmV0dXJuQ29kZSI6MSwic3ViamVjdCI6W3siZmlkIjoxMTc1NzU0NDQ2LCJuYW1lIjp7Im5hbWUxIjoiQkFTSEVFUiBLIiwibmFtZTIiOiJTL08gQUJEVUwgS0FSRUVNIiwiZG9iIjoiMTk4NDAxMDEiLCJnZW5kZXIiOiIyIiwiZXJyb3JDb2RlU2VnbWVudCI6IlpaIn0sImlkIjpbXSwidGVsZXBob25lIjpbeyJzZXJpYWxOdW1iZXIiOjI0MTkxNTI3NzIsInRlbGVwaG9uZVR5cGUiOiIwMSIsInRlbGVwaG9uZU51bWJlciI6Ijc5MDczMzUzMDAiLCJlbnJpY2hNb2RlIjoiUiJ9XSwiYWRkcmVzcyI6W3sic2VyaWFsTnVtYmVyIjo1OTM2MDI4MzM4LCJsaW5lMSI6IlMvTyBBQkRVTCBLQVJFRU0gS1VaSElWSUxBIEhPVVNFIEtPREEiLCJsaW5lMiI6IlZJTExBR0UgQkhPT0RBTiBDT0xPTlkgQ0hVTkdBVEhBUkEiLCJsaW5lMyI6IktFUkFMQSBJTkRJQSBDSFVSQ0ggNjc5MzM0Iiwic3RhdGVDb2RlIjoiMzIiLCJwaW5Db2RlIjo2NzkzMzQsImFkZHJlc3NDYXRlZ29yeSI6IjAyIiwicmVwb3J0ZWREYXRlIjoiMjAyNjA2MTUiLCJlbnJpY2hNb2RlIjoiUiIsIm1lbWJlclNob3J0TmFtZSI6IkJBSkFKIEZJTiBMVEQifV0sImVtYWlsIjpbeyJzZXJpYWxOdW1iZXIiOjYzNjM4MjQzMywiZW1haWxJRCI6IkZBSVNOQUpVQEdNQUlMLkNPTSJ9XSwiYWNjb3VudCI6W3sic2VyaWFsTnVtYmVyIjo0MjU4OTYzNjA1LCJmaWxlU2luY2VEYXRlIjoiMjAyNjA2MjQiLCJhY2NvdW50TnVtYmVyIjoiUDdCMVBEUDEwMzA1NTA3OSIsImFjY291bnRUeXBlIjoiMDYiLCJtZW1iZXJLb2IiOiJOQiIsIm1lbWJlckNvZGUiOjY2MDMwMDAxLCJtZW1iZXJTaG9ydE5hbWUiOiJCQUpBSiBGSU4gTFREIiwib3duZXJzaGlwSW5kaWNhdG9yIjoiMSIsImRhdGVPcGVuZWQiOiIyMDI2MDYwOSIsImRhdGVPZkxhc3RQYXltZW50IjoiMjAyNjA4MDIiLCJyZXBvcnRlZERhdGUiOiIyMDI2MDgzMSIsImhpZ2hDcmVkaXRBbW91bnQiOjI2MjUyLCJjdXJyZW50QmFsYW5jZSI6MjMzMzYsImFtb3VudE92ZXJkdWUiOjAsInBheW1lbnRIaXN0b3J5IjpbMCwwLDBdLCJwYXltZW50SGlzdFN0YXJ0RGF0ZSI6IjIwMjYwODAxIiwicGF5bWVudEhpc3RFbmREYXRlIjoiMjAyNjA2MDEiLCJ2YWx1ZU9mQ29sbGF0ZXJhbCI6LTEsInR5cGVPZkNvbGxhdGVyYWwiOiIwMCIsImNyZWRpdExpbWl0IjotMSwiY2FzaExpbWl0IjotMSwicmF0ZU9mSW50ZXJlc3QiOi0xLjAsInJlcGF5bWVudFRlbnVyZSI6MTgsIkVNSUFtb3VudCI6MTQ1OCwid3JpdHRlbk9mZkFtdFRvdGFsIjotMSwid3JpdHRlbk9mZkFtdFByaW5jaXBhbCI6LTEsInNldHRsZW1lbnRBbW91bnQiOi0xLCJwYXltZW50RnJlcXVlbmN5IjoiMDMiLCJhY3R1YWxQYXltZW50QW1vdW50IjoxNDU4fV0sImlucXVpcnkiOltdLCJjZHIiOnt9LCJlbXBsb3ltZW50Ijp7InNlcmlhbE51bWJlciI6NDI1ODk2MzYwNSwiYWNjb3VudFR5cGUiOiIwNiIsInJlcG9ydGVkRGF0ZSI6IjIwMjYwODMxIiwib2NjdXBhdGlvbkNvZGUiOiIwMyJ9LCJzY29yZXMiOlt7InNjb3JlTmFtZSI6IkNJQklMVFVTQzMiLCJzY29yZUNhcmROYW1lIjoiMDgiLCJzY29yZUNhcmRWZXJzaW9uIjoiMTAiLCJzY29yZURhdGUiOiIxMzA5MjAyNiIsInNjb3JlIjoiMDA3MjgiLCJleGNsdXNpb25Db2RlcyI6W3siZXhjbHVzaW9uQ29kZU5hbWUiOiJleGNsdXNpb25Db2RlMSIsImV4Y2x1c2lvbkNvZGVWYWx1ZSI6IjAwIn0seyJleGNsdXNpb25Db2RlTmFtZSI6ImV4Y2x1c2lvbkNvZGUyIiwiZXhjbHVzaW9uQ29kZVZhbHVlIjoiMDAifSx7ImV4Y2x1c2lvbkNvZGVOYW1lIjoiZXhjbHVzaW9uQ29kZTMiLCJleGNsdXNpb25Db2RlVmFsdWUiOiIwMCJ9LHsiZXhjbHVzaW9uQ29kZU5hbWUiOiJleGNsdXNpb25Db2RlNCIsImV4Y2x1c2lvbkNvZGVWYWx1ZSI6IjAwIn0seyJleGNsdXNpb25Db2RlTmFtZSI6ImV4Y2x1c2lvbkNvZGU1IiwiZXhjbHVzaW9uQ29kZVZhbHVlIjoiMDAifSx7ImV4Y2x1c2lvbkNvZGVOYW1lIjoiZXhjbHVzaW9uQ29kZTYiLCJleGNsdXNpb25Db2RlVmFsdWUiOiIwMCJ9LHsiZXhjbHVzaW9uQ29kZU5hbWUiOiJleGNsdXNpb25Db2RlNyIsImV4Y2x1c2lvbkNvZGVWYWx1ZSI6IjAwIn0seyJleGNsdXNpb25Db2RlTmFtZSI6ImV4Y2x1c2lvbkNvZGU5IiwiZXhjbHVzaW9uQ29kZVZhbHVlIjoiMDAifSx7ImV4Y2x1c2lvbkNvZGVOYW1lIjoiZXhjbHVzaW9uQ29kZTEwIiwiZXhjbHVzaW9uQ29kZVZhbHVlIjoiMDAifV0sInJlYXNvbkNvZGVzIjpbeyJyZWFzb25Db2RlTmFtZSI6InJlYXNvbkNvZGUxIiwicmVhc29uQ29kZVZhbHVlIjoiNTQifSx7InJlYXNvbkNvZGVOYW1lIjoicmVhc29uQ29kZTIiLCJyZWFzb25Db2RlVmFsdWUiOiIyNSJ9LHsicmVhc29uQ29kZU5hbWUiOiJyZWFzb25Db2RlMyIsInJlYXNvbkNvZGVWYWx1ZSI6IjI4In0seyJyZWFzb25Db2RlTmFtZSI6InJlYXNvbkNvZGU0IiwicmVhc29uQ29kZVZhbHVlIjoiMjQifSx7InJlYXNvbkNvZGVOYW1lIjoicmVhc29uQ29kZTUiLCJyZWFzb25Db2RlVmFsdWUiOiIxNSJ9XSwiZXJyb3JDb2RlIjoiMDAwMDAifV19XSwiZXJyb3IiOltdfX0="
+                    }
+                  },
+                  "Borrower": {
+                    "Birth": {
+                      "age": "0",
+                      "date": "1984-01-01+05:30",
+                      "Source": {
+                        "Bureau": {
+                          "rank": "100000",
+                          "symbol": "CIBIL",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "Locale": "en_IN",
+                        "Reference": "115a483a-3aa2-48d9-8c77-516c63264f16",
+                        "BorrowerKey": "11324252446",
+                        "InquiryDate": "2026-09-13+05:30"
+                      },
+                      "BirthDate": { "day": "1", "year": "1984", "month": "1" },
+                      "partitionSet": "0"
+                    },
+                    "Gender": "Male",
+                    "Employer": {
+                      "name": "",
+                      "Source": {
+                        "Bureau": {
+                          "rank": "100000",
+                          "symbol": "CIBIL",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "Locale": "en_IN",
+                        "Reference": "115a483a-3aa2-48d9-8c77-516c63264f16",
+                        "BorrowerKey": "11324252446",
+                        "InquiryDate": "2026-09-13+05:30"
+                      },
+                      "account": "06",
+                      "dateReported": "2026-08-31+05:30",
+                      "partitionSet": "0",
+                      "serialNumber": "4258963605",
+                      "CreditAddress": {
+                        "City": "",
+                        "Region": "",
+                        "PostalCode": "",
+                        "AddressType": "",
+                        "StreetAddress": ""
+                      },
+                      "OccupationCode": {
+                        "rank": "100000",
+                        "symbol": "03",
+                        "description": "Self Employed",
+                        "abbreviation": ""
+                      },
+                      "NetGrossIndicator": "",
+                      "IncomeFreqIndicator": ""
+                    },
+                    "CreditScore": {
+                      "Source": {
+                        "Bureau": {
+                          "rank": "100000",
+                          "symbol": "CIBIL",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "Locale": "en_IN",
+                        "Reference": "115a483a-3aa2-48d9-8c77-516c63264f16",
+                        "BorrowerKey": "11324252446",
+                        "InquiryDate": "2026-09-13+05:30"
+                      },
+                      "riskScore": "728",
+                      "scoreName": "CIBILTransUnionScore3",
+                      "NoScoreReason": {
+                        "rank": "100000",
+                        "symbol": "",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "populationRank": "25",
+                      "CreditScoreModel": {
+                        "rank": "100000",
+                        "symbol": "CIBILTUSC3",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "CreditScoreFactor": [
+                        {
+                          "Factor": {
+                            "rank": "100000",
+                            "symbol": "54",
+                            "description": "",
+                            "abbreviation": ""
+                          },
+                          "FactorText": [
+                            "explain: Your exposure to credit has been less than six months from the date of the report. The more recent the account open dates across your credit profile the lower would be your CIBIL Score. Ensure you do not open too many credit card and loan accounts within a short period of time. Make sure you make timely payments towards all your accounts.",
+                            "factor: Your exposure to credit has been less than six months from the date of the report. The more recent the account open dates across your credit profile the lower would be your CIBIL Score. Ensure you do not open too many credit card and loan accounts within a short period of time. Make sure you make timely payments towards all your accounts."
+                          ],
+                          "bureauCode": "54"
+                        },
+                        {
+                          "Factor": {
+                            "rank": "100000",
+                            "symbol": "25",
+                            "description": "",
+                            "abbreviation": ""
+                          },
+                          "FactorText": [
+                            "explain: One of the factors your CIBIL Score depends on is the number of active loan/credit card accounts reported in the last 36 months that carry a current balance. A high balance on such active accounts will impact your CIBIL Score. Paying off the balances on the loan and credit card accounts as well as not having too many open lines of credit with current balances will help maintain your CIBIL Score.",
+                            "factor: One of the factors your CIBIL Score depends on is the number of active loan/credit card accounts reported in the last 36 months that carry a current balance. A high balance on such active accounts will impact your CIBIL Score. Paying off the balances on the loan and credit card accounts as well as not having too many open lines of credit with current balances will help maintain your CIBIL Score."
+                          ],
+                          "bureauCode": "25"
+                        },
+                        {
+                          "Factor": {
+                            "rank": "100000",
+                            "symbol": "28",
+                            "description": "",
+                            "abbreviation": ""
+                          },
+                          "FactorText": [
+                            "explain: Your exposure to credit has been less than six months from the date of the report. The more recent the account open dates across your credit profile the lower would be your CIBIL Score. Ensure you do not open too many credit card and loan accounts within a short period of time. Make sure you make timely payments towards all your accounts.",
+                            "factor: Your exposure to credit has been less than six months from the date of the report. The more recent the account open dates across your credit profile the lower would be your CIBIL Score. Ensure you do not open too many credit card and loan accounts within a short period of time. Make sure you make timely payments towards all your accounts."
+                          ],
+                          "bureauCode": "28"
+                        },
+                        {
+                          "Factor": {
+                            "rank": "100000",
+                            "symbol": "24",
+                            "description": "",
+                            "abbreviation": ""
+                          },
+                          "FactorText": [
+                            "explain: Your exposure to credit has been less than six months from the date of the report. The more recent the account open dates across your credit profile the lower would be your CIBIL Score. Ensure you do not open too many credit card and loan accounts within a short period of time. Make sure you make timely payments towards all your accounts.",
+                            "factor: Your exposure to credit has been less than six months from the date of the report. The more recent the account open dates across your credit profile the lower would be your CIBIL Score. Ensure you do not open too many credit card and loan accounts within a short period of time. Make sure you make timely payments towards all your accounts."
+                          ],
+                          "bureauCode": "24"
+                        },
+                        {
+                          "Factor": {
+                            "rank": "100000",
+                            "symbol": "15",
+                            "description": "",
+                            "abbreviation": ""
+                          },
+                          "FactorText": [
+                            "explain: One of the factors your CIBIL Score depends is on the total outstanding balance across accounts accumulated on your credit profile. A sudden buildup of balances in a short span of time across the accounts will impact your CIBIL Score. Ensure you do not have a very high utilization on your credit cards and pay down your balances on credit cards to help maintain your CIBIL Score.",
+                            "factor: One of the factors your CIBIL Score depends is on the total outstanding balance across accounts accumulated on your credit profile. A sudden buildup of balances in a short span of time across the accounts will impact your CIBIL Score. Ensure you do not have a very high utilization on your credit cards and pay down your balances on credit cards to help maintain your CIBIL Score."
+                          ],
+                          "bureauCode": "15"
+                        }
+                      ]
+                    },
+                    "borrowerKey": "11324252446",
+                    "BorrowerName": {
+                      "Name": { "Forename": "BASHEER K S/O ABDUL KAREEM" },
+                      "Source": {
+                        "Bureau": {
+                          "rank": "100000",
+                          "symbol": "CIBIL",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "Locale": "en_IN",
+                        "Reference": "115a483a-3aa2-48d9-8c77-516c63264f16",
+                        "BorrowerKey": "11324252446",
+                        "InquiryDate": "2026-09-13+05:30"
+                      },
+                      "NameType": {
+                        "rank": "100000",
+                        "symbol": "",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "partitionSet": "0"
+                    },
+                    "EmailAddress": {
+                      "Email": "FAISNAJU@GMAIL.COM",
+                      "serialNumber": "636382433"
+                    },
+                    "BorrowerAddress": {
+                      "Origin": {
+                        "rank": "100000",
+                        "symbol": "BAJAJ FIN LTD",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "Source": {
+                        "Bureau": {
+                          "rank": "100000",
+                          "symbol": "CIBIL",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "Locale": "en_IN",
+                        "Reference": "115a483a-3aa2-48d9-8c77-516c63264f16",
+                        "BorrowerKey": "11324252446",
+                        "InquiryDate": "2026-09-13+05:30"
+                      },
+                      "Dwelling": {
+                        "rank": "100000",
+                        "symbol": "02",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "Ownership": {
+                        "rank": "100000",
+                        "symbol": "",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "enrichMode": "R",
+                      "addressOrder": "0",
+                      "dateReported": "2026-06-15+05:30",
+                      "partitionSet": "0",
+                      "CreditAddress": {
+                        "City": "",
+                        "Region": "32",
+                        "PostalCode": "679334",
+                        "AddressType": "",
+                        "SerialNumber": "5936028338",
+                        "StreetAddress": "S/O ABDUL KAREEM KUZHIVILA HOUSE KODA VILLAGE BHOODAN COLONY CHUNGATHARA KERALA INDIA CHURCH 679334"
+                      }
+                    },
+                    "CreditStatement": {
+                      "Source": {
+                        "Bureau": {
+                          "rank": "100000",
+                          "symbol": "CIBIL",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "Locale": "en_IN",
+                        "Reference": "115a483a-3aa2-48d9-8c77-516c63264f16",
+                        "BorrowerKey": "11324252446",
+                        "InquiryDate": "2026-09-13+05:30"
+                      },
+                      "statement": "",
+                      "dateUpdated": "",
+                      "StatementType": {
+                        "rank": "100000",
+                        "symbol": "DISPUTE",
+                        "description": "",
+                        "abbreviation": ""
+                      }
+                    },
+                    "BorrowerTelephone": {
+                      "Source": {
+                        "Bureau": {
+                          "rank": "100000",
+                          "symbol": "CIBIL",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "Locale": "en_IN",
+                        "Reference": "115a483a-3aa2-48d9-8c77-516c63264f16",
+                        "BorrowerKey": "11324252446",
+                        "InquiryDate": "2026-09-13+05:30"
+                      },
+                      "PhoneType": {
+                        "rank": "100000",
+                        "symbol": "01",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "enrichMode": "R",
+                      "PhoneNumber": {
+                        "Number": "7907335300",
+                        "SerialNumber": "2419152772"
+                      },
+                      "partitionSet": "0"
+                    },
+                    "IdentifierPartition": {
+                      "Identifier": {
+                        "ID": {
+                          "Id": "11324252446",
+                          "IdentifierName": "SocialId"
+                        },
+                        "Source": {
+                          "Bureau": {
+                            "rank": "100000",
+                            "symbol": "CIBIL",
+                            "description": "",
+                            "abbreviation": ""
+                          },
+                          "Locale": "en_IN",
+                          "Reference": "115a483a-3aa2-48d9-8c77-516c63264f16",
+                          "BorrowerKey": "11324252446",
+                          "InquiryDate": "2026-09-13+05:30"
+                        }
+                      }
+                    }
+                  },
+                  "ReferenceKey": "11635475627",
+                  "FraudIndicator": false,
+                  "currentversion": "5.0",
+                  "DeceasedIndicator": false,
+                  "SafetyCheckPassed": true,
+                  "TradeLinePartition": {
+                    "Tradeline": {
+                      "Source": {
+                        "Bureau": {
+                          "rank": "100000",
+                          "symbol": "CIBIL",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "Locale": "en_IN",
+                        "Reference": "115a483a-3aa2-48d9-8c77-516c63264f16",
+                        "BorrowerKey": "11324252446",
+                        "InquiryDate": "2026-09-13+05:30"
+                      },
+                      "branch": "",
+                      "bureau": "",
+                      "position": "0",
+                      "PayStatus": {
+                        "rank": "100000",
+                        "symbol": "",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "OpenClosed": {
+                        "rank": "100000",
+                        "symbol": "",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "dateOpened": "2026-06-09+05:30",
+                      "DisputeFlag": {
+                        "rank": "100000",
+                        "symbol": "",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "highBalance": "26252",
+                      "GrantedTrade": {
+                        "TermType": {
+                          "rank": "100000",
+                          "symbol": "",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "CashLimit": "-1",
+                        "EMIAmount": "1458",
+                        "CreditType": {
+                          "rank": "100000",
+                          "symbol": "06",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "collateral": "-1",
+                        "termMonths": "18",
+                        "AccountType": {
+                          "rank": "100000",
+                          "symbol": "06",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "CreditLimit": "-1",
+                        "interestRate": "-1.00",
+                        "serialNumber": "4258963605",
+                        "amountPastDue": "0",
+                        "CollateralType": {
+                          "rank": "100000",
+                          "symbol": "00",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "WorstPayStatus": {
+                          "rank": "100000",
+                          "symbol": "",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "dateLastPayment": "2026-08-02+05:30",
+                        "PayStatusHistory": {
+                          "status": "0,0,0,",
+                          "endDate": "2026-06-01+05:30",
+                          "startDate": "2026-08-01+05:30",
+                          "MonthlyPayStatus": [
+                            { "date": "2026-08-01+05:30", "status": "0" },
+                            { "date": "2026-07-01+05:30", "status": "0" },
+                            { "date": "2026-06-01+05:30", "status": "0" }
+                          ]
+                        },
+                        "PaymentFrequency": {
+                          "rank": "100000",
+                          "symbol": "03",
+                          "description": "",
+                          "abbreviation": ""
+                        },
+                        "actualPaymentAmount": "1458"
+                      },
+                      "IndustryCode": {
+                        "rank": "100000",
+                        "symbol": "",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "creditorName": "BAJAJ FIN LTD",
+                      "dateReported": "2026-08-31+05:30",
+                      "accountNumber": "P7B1PDP103055079",
+                      "accountsSoldTo": "",
+                      "currentBalance": "23336",
+                      "subscriberCode": "66030001",
+                      "thirdPartyName": "",
+                      "AccountCondition": {
+                        "rank": "100000",
+                        "symbol": "",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "noOfParticipants": "",
+                      "settlementAmount": "-1",
+                      "AccountDesignator": {
+                        "rank": "100000",
+                        "symbol": "1",
+                        "description": "",
+                        "abbreviation": ""
+                      },
+                      "dateAccountStatus": "2026-08-02+05:30",
+                      "writtenOffAmtTotal": "-1",
+                      "writtenOffPrincipal": "-1",
+                      "VerificationIndicator": {
+                        "rank": "100000",
+                        "symbol": "",
+                        "description": "",
+                        "abbreviation": ""
+                      }
+                    },
+                    "accountTypeSymbol": "06",
+                    "accountTypeDescription": "",
+                    "accountTypeAbbreviation": ""
+                  }
+                }
+              },
+              "CreditSummaryData": {
+                "Inquires": "0",
+                "CreditMix": "0",
+                "OnTimePaymentHistory": "100",
+                "CreditCardUtilization": "0",
+                "OldestCreditAccountPeriod": "3"
+              }
+            }
+          }
+        },
+        "http_code": 200
+      },
+      {
+        "name": "GetProductWebToken",
+        "step": 4,
+        "status": "success",
+        "response": {
+          "GetProductWebTokenResponse": {
+            "ResponseKey": "cd59914a2454f290:677a937c:1a09e30b5ca:7ca2",
+            "ResponseStatus": "Success",
+            "GetProductWebTokenSuccess": {
+              "WebToken": "Ws7r-c0ZQeIWBG9U-W5MoTXkwVF6-hb846g0Ct69cTY4CKklJfESUmZcnkIWT0DhW2T0wvpbIrb2kumgBtQYALan0pSPV-yvGtfSUCMRej0",
+              "PartnerCustomerId": "CUN8J6A9RVPHMYF8QAJP"
+            }
+          }
+        },
+        "http_code": 200
+      }
+    ],
+    "status": "success",
+    "message": "CIBIL report ready. Use reports.xaler_pdf_report for a copy that does not expire.",
+    "pdf_url": "https://apiuser.idspay.in/credit-report-pdf?reference=6aa78099212cc&type=SVC0259",
+    "reports": {
+      "xaler_pdf_report": {
+        "url": "https://my-credit-analytics-bucket-xaler.s3.amazonaws.com/TransUnion-pdf/transunion_cibil_11635475627.pdf?AWSAccessKeyId=AKIA3FLD3UWVR3KVDQVK&Signature=va%2B%2BGm1oeEB9bu7dNRV6ZNVEXis%3D&Expires=1789967120",
+        "note": "Full CIBIL report laid out like the TransUnion original.",
+        "format": "pdf",
+        "layout": "v1",
+        "source": "Xaler (rendered from the same bureau data)",
+        "expires": "7 days (link); the stored file is retained longer",
+        "layout_name": "Xaler CIBIL report (original layout)",
+        "layouts_available": {
+          "v1": "Xaler CIBIL report (original layout)",
+          "v2": "Consumer CIR layout (A3, lender-facing)",
+          "v3": "CIBIL Score & Report layout (A4, consumer-facing)"
+        }
+      },
+      "xaler_copies_note": "A stored copy for this control number already existed and was reused rather than generated again.",
+      "xaler_json_report": {
+        "url": "https://my-credit-analytics-bucket-xaler.s3.amazonaws.com/TransUnion-json/transunion_cibil_11635475627.json?AWSAccessKeyId=AKIA3FLD3UWVR3KVDQVK&Signature=3CqG7Goy8WWsWDHtPhVtQw7UQrs%3D&Expires=1789967120",
+        "note": "Always archived whenever the bureau returns a report — this is what remains once the TransUnion link expires.",
+        "format": "json",
+        "source": "Xaler (stored copy of the bureau response)",
+        "expires": "7 days (link); the stored file is retained longer"
+      },
+      "xaler_copies_status": "ready",
+      "transunion_live_report": {
+        "url": "https://myscore.cibil.com/CreditView/webtokenasset.page?enterprise=UYFincorp&pcc=CUN8J6A9RVPHMYF8QAJP&webtoken=Ws7r-c0ZQeIWBG9U-W5MoTXkwVF6-hb846g0Ct69cTY4CKklJfESUmZcnkIWT0DhW2T0wvpbIrb2kumgBtQYALan0pSPV-yvGtfSUCMRej0",
+        "note": "Short-lived by TransUnion security policy and cannot be extended. Open it immediately; after it expires the page shows \"Access Expired\". Use the stored Xaler copy for anything you need to keep.",
+        "format": "web",
+        "source": "TransUnion CIBIL (live)",
+        "expires": "about 15-30 minutes after generation"
+      }
+    },
+    "warnings": [
+      {
+        "code": "CLIENT_KEY_SUBSTITUTED",
+        "field": "client_key",
+        "message": "client_key '2DFN8RZ4NDX7FZZJLDTD' is new, but this consumer (PAN GUGPK1335G) is already enrolled at the bureau under 'CUN8J6A9RVPHMYF8QAJP'. Xaler used the existing key. Sending a new key for an enrolled consumer resets their identity verification and destroys any pending OTP — reuse the same client_key for the same person."
+      }
+    ],
+    "diagnosis": {
+      "code": "SUCCESS",
+      "title": "Report generated",
+      "message": "The credit report was generated successfully.",
+      "warnings": [],
+      "next_step": null,
+      "retryable": false,
+      "failed_step": null,
+      "bureau_message": null
+    },
+    "retryable": false,
+    "client_key": "CUN8J6A9RVPHMYF8QAJP",
+    "error_code": null,
+    "identity_sent": {
+      "gender": "Male",
+      "pan_id": "GUGPK1335G",
+      "surname": "KUZHIVILA",
+      "forename": "BASHEER",
+      "phone_number": "7907335300",
+      "date_of_birth": "1984-01-01"
+    },
+    "report_source": "live",
+    "skip_declined": null,
+    "steps_summary": [
+      { "name": "FulfillOffer", "step": 1, "status": "success" },
+      { "name": "GetAuthenticationQuestions", "step": 2, "status": "success" },
+      { "name": "GetCustomerAssets", "step": 3, "status": "success" },
+      { "name": "GetProductWebToken", "step": 4, "status": "success" }
+    ],
+    "match_strength": {
+      "level": "strong",
+      "score": 95,
+      "advice": null,
+      "missing": ["PIN code"],
+      "present": [
+        "PAN - the bureau's strongest single identifier",
+        "date of birth - separates same-name consumers",
+        "forename and surname",
+        "registered mobile"
+      ]
+    },
+    "report_summary": {
+      "pan": null,
+      "name": "BASHEER K S/O ABDUL KAREEM",
+      "gender": "Male",
+      "score_band": "Good",
+      "score_name": "CIBILTransUnionScore3",
+      "report_date": "13/09/2026",
+      "credit_score": 728,
+      "date_of_birth": "01/01/1984",
+      "open_accounts": 1,
+      "control_number": "11635475627",
+      "total_accounts": 1,
+      "closed_accounts": 0,
+      "total_enquiries": 0,
+      "total_amount_overdue": 0,
+      "total_current_balance": 23336,
+      "total_sanctioned_amount": 26252,
+      "oldest_account_age_months": "3",
+      "credit_card_utilization_pct": "0",
+      "on_time_payment_history_pct": "100"
+    },
+    "what_to_do_next": null,
+    "recovered_report": null,
+    "report_source_note": "Pulled live from TransUnion. A stored copy for this control number already existed and was reused instead of being generated again.",
+    "credit_report_message": {
+      "message": "CIBIL report ready. Use reports.xaler_pdf_report for a copy that does not expire.",
+      "message_code": "Message code not found"
+    },
+    "pending_authentication": null
+  },
+  "status": {
+    "code": 200,
+    "type": "success",
+    "message": "CIBIL report ready. Use reports.xaler_pdf_report for a copy that does not expire."
+  },
+  "message": "CIBIL report ready. Use reports.xaler_pdf_report for a copy that does not expire.",
+  "_live_report_url": "https://myscore.cibil.com/CreditView/webtokenasset.page?enterprise=UYFincorp&pcc=CUN8J6A9RVPHMYF8QAJP&webtoken=Ws7r-c0ZQeIWBG9U-W5MoTXkwVF6-hb846g0Ct69cTY4CKklJfESUmZcnkIWT0DhW2T0wvpbIrb2kumgBtQYALan0pSPV-yvGtfSUCMRej0"
+}

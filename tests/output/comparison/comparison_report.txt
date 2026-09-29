@@ -1,0 +1,18 @@
+Reference: 15 pages, page size Rect(0.0, 0.0, 595.2755737304688, 841.8897705078125)
+Generated: 10 pages, page size Rect(0.0, 0.0, 595.2755737304688, 841.8897705078125)
+(Page counts will differ - the reference and sample.json describe different consumers with different amounts of data. Page *size* should match: both A4.)
+
+All expected section headings are present in the generated PDF.
+All expected field labels are present in the generated PDF.
+
+Page size: reference=(595, 842) generated=(595, 842) OK (A4 match)
+
+Font-size spot-check (label -> reference pt / generated pt):
+  Name: 8.5 / 8.5
+  Member Name: 8.5 / 8.5
+  Category: 8.5 / 8.5
+
+Page 1 pixel diff saved to D:\beruejsontopdf\newadvcibil-pdf-engine\tests\output\comparison\page1_diff.png
+  differing pixels: 147121/1127859 (13.0%)
+  diff bounding box: (63, 39, 830, 1216)
+  (a nonzero percentage is expected - different consumer name/score/dates/addresses - this is a coarse layout-drift signal, not a pass/fail check)

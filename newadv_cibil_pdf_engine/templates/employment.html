@@ -1,0 +1,39 @@
+<h2 class="section-heading">Employment Details</h2>
+{% if contact.employment.has_data %}
+<div class="tint avoid-break">
+  <div class="card">
+    <div class="card-row">
+      <div class="card-cell">
+        <span class="detail-label">Account Type</span>
+        <span class="detail-value">{{ contact.employment.account_type_label }}</span>
+      </div>
+      <div class="card-cell">
+        <span class="detail-label">Date Reported</span>
+        <span class="detail-value">{{ contact.employment.date_reported }}</span>
+      </div>
+      <div class="card-cell">
+        <span class="detail-label">Occupation</span>
+        <span class="detail-value">{{ contact.employment.occupation }}</span>
+      </div>
+      <div class="card-cell">
+        <span class="detail-label">Income</span>
+        <span class="detail-value">{{ contact.employment.income }}</span>
+      </div>
+    </div>
+    <div class="card-row">
+      <div class="card-cell">
+        <span class="detail-label">Monthly / Annual Income Indicator</span>
+        <span class="detail-value">{{ contact.employment.monthly_annual_income_indicator }}</span>
+      </div>
+      <div class="card-cell">
+        <span class="detail-label">Net / Gross Income Indicator</span>
+        <span class="detail-value">{{ contact.employment.net_gross_income_indicator }}</span>
+      </div>
+      <div class="card-cell"></div>
+      <div class="card-cell"></div>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="empty-state">No employment details are available.</div>
+{% endif %}

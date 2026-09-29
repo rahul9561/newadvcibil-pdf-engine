@@ -1,0 +1,368 @@
+/* newadv_cibil_pdf_engine / report.css
+   Visual language reverse-engineered from the reference PDF
+   (pdfsample/sample.pdf). Positions, sizes, colours and rule widths were
+   measured off the reference with PyMuPDF (get_text("dict") for text
+   spans, get_drawings() for boxes/rules) rather than eyeballed. The
+   typefaces are the reference's own (Roboto / Montserrat / Poppins),
+   bundled in static/fonts. Nothing here is customer-data-specific.
+
+   Horizontal grid (page content box = 42.5pt .. 552.8pt):
+     full   - 42.5  .. 552.8  score panel, tinted wrappers, account
+                               details table, payment grid, legend
+     inset  - 48.5  .. 546.8  headings, plain cards, text   (6pt)
+     inset9 - 51.5  .. 543.8  cards inside a tinted wrapper (9pt) */
+
+:root {
+  --brand-blue: #00a2d1;
+  --text-primary: #26282b;
+  --text-muted: #6b7280;
+  --border-outer: #dfe2e8;
+  --border-inner: #e6e9ed;
+  --tint-bg: #f4f6f8;
+  --grid-head-bg: #edf0f4;
+  --green: #2fa84f;
+  --red: #d82f24;
+
+  --font-heading: 'Montserrat', 'DejaVu Sans', Arial, sans-serif;
+  --font-body: 'Roboto', 'DejaVu Sans', Arial, sans-serif;
+  --font-score: 'Poppins', 'DejaVu Sans', Arial, sans-serif;
+}
+
+.avoid-break { break-inside: avoid; }
+.keep-with-next { break-after: avoid; }
+
+/* -------------------------------------------------- logo & report title */
+
+.logo { margin: 4pt 0 0 6pt; height: 43.6pt; }
+.logo img { display: block; width: 101pt; height: 43.6pt; }
+
+.report-title-row {
+  position: relative;
+  height: 52pt;
+}
+.report-title {
+  position: absolute;
+  left: 0;
+  top: 21.4pt;
+  font-family: var(--font-heading);
+  font-size: 17pt;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+.report-title-meta {
+  position: absolute;
+  right: 0;
+  top: 14pt;
+  font-family: var(--font-body);
+  text-align: right;
+  font-size: 8.5pt;
+  line-height: 14pt;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------- score gauge */
+
+.score-panel {
+  position: relative;
+  height: 120pt;
+  background: var(--tint-bg);
+}
+.score-gauge { position: absolute; left: 0; top: 0; width: 173.2pt; height: 120pt; }
+.score-gauge svg { position: absolute; left: 0; top: 0; }
+.score-range-min, .score-range-max {
+  position: absolute;
+  top: 59.4pt;
+  font-family: var(--font-body);
+  font-size: 7.5pt;
+  color: var(--text-muted);
+}
+.score-range-min { left: 31.8pt; }
+.score-range-max { left: 128.7pt; }
+.score-value {
+  position: absolute;
+  left: 0;
+  width: 173.2pt;
+  top: 66pt;
+  text-align: center;
+  font-family: var(--font-score);
+  font-size: 21pt;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.score-text { position: absolute; left: 167.1pt; right: 12pt; top: 40.2pt; }
+.score-hello {
+  font-family: var(--font-heading);
+  font-size: 12.5pt;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1.6pt 0;
+}
+.score-asof { font-family: var(--font-body); font-size: 9pt; color: var(--text-primary); margin: 0 0 3.8pt 0; }
+.score-explainer { font-family: var(--font-body); font-size: 7.8pt; color: var(--text-muted); margin: 0; }
+
+.score-body { margin: 10.9pt 6pt 12.2pt 6pt; }
+.score-body p {
+  font-family: var(--font-body);
+  font-size: 8.5pt;
+  line-height: 12pt;
+  color: var(--text-primary);
+  margin: 0 0 4pt 0;
+}
+.score-body ol {
+  font-family: var(--font-body);
+  font-size: 7.8pt;
+  line-height: 13pt;
+  color: var(--text-primary);
+  margin: -1pt 0 0 10pt;
+  padding: 0;
+  list-style-position: inside;
+}
+
+/* ---------------------------------------------------- section headings */
+/* Tier 1: PERSONAL/IDENTIFICATION/.../ALL ACCOUNTS/ENQUIRY DETAILS -
+   11pt Montserrat-Bold, brand blue, 6pt inset. */
+h2.section-heading {
+  font-family: var(--font-heading);
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--brand-blue);
+  text-transform: uppercase;
+  margin: 10.6pt 6pt 3pt 6pt;
+  break-after: avoid;
+}
+h2.section-heading.first-on-page { margin-top: 0; }
+
+/* Tier 2: ACCOUNT DETAILS / PAYMENT STATUS inside an account. */
+h3.subheading-muted {
+  font-family: var(--font-body);
+  font-size: 9.5pt;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin: 0 6pt 3pt 6pt;
+  break-after: avoid;
+}
+
+/* Tier 3: OPEN ACCOUNTS / CLOSED ACCOUNTS with a status dot and a rule. */
+.subsection-heading {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  padding: 0 0 4pt 14pt;
+  margin: 5pt 0 0 0;
+  break-after: avoid;
+}
+.subsection-heading::after {
+  content: "";
+  position: absolute;
+  left: 6pt; right: 6pt; bottom: 0;
+  border-bottom: 0.6pt solid var(--border-inner);
+}
+.subsection-heading .dot {
+  position: absolute;
+  left: 1pt;
+  top: 2pt;
+  width: 8pt; height: 8pt; border-radius: 50%;
+}
+.dot--open { background: var(--green); }
+.dot--closed { background: var(--red); }
+
+/* --------------------------------------------------------- detail cards */
+
+.tint { background: var(--tint-bg); padding: 9pt; box-decoration-break: clone; }
+
+/* Cards are CSS tables (card > card-row > card-cell): every row shares
+   the card's column grid, cells in a row share one height so column rules
+   run full height, and when a card splits across pages each fragment is
+   closed around the rows it holds (as the reference does) instead of the
+   border running on to the bottom of the page. Widths are explicit because
+   a table's auto width would shrink to fit its content. */
+.card {
+  display: table;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 498.3pt;                 /* inset 6pt each side */
+  margin: 0 6pt;
+  background: #ffffff;
+  border: 0.6pt solid var(--border-outer);
+}
+.tint .card, .card--inset9 { width: 492.3pt; margin: 0; }
+.card--inset9 { margin: 0 9pt; }
+
+.card-row { display: table-row; break-inside: avoid; }
+.card-row + .card-row > .card-cell { border-top: 0.5pt solid var(--border-inner); }
+
+.card-cell {
+  display: table-cell;
+  vertical-align: top;
+  padding: 8.2pt 7.4pt 4.7pt 7.4pt;
+}
+.card-cell + .card-cell { border-left: 0.5pt solid var(--border-inner); }
+
+/* Address Details column split (reference: 40/22/18/20). */
+.card--address .card-cell:nth-child(1) { width: 40%; }
+.card--address .card-cell:nth-child(2) { width: 22%; }
+.card--address .card-cell:nth-child(3) { width: 18%; }
+.card--address .card-cell:nth-child(4) { width: 20%; }
+
+.detail-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 8.5pt;
+  line-height: 10.5pt;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.9pt;
+}
+.detail-value {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 9pt;
+  line-height: 11.5pt;
+  font-weight: 400;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+/* ----------------------------------------------- account summary rows */
+
+.summary-row {
+  display: table;
+  table-layout: fixed;
+  width: 498.3pt;
+  margin: 0 6pt;
+  padding: 9pt 0 8pt 0;
+}
+.summary-row .summary-cell { display: table-cell; vertical-align: top; padding-right: 8pt; }
+
+/* Page-break units inside an account: summary row + ACCOUNT DETAILS table
+   stay together; PAYMENT STATUS heading + dates card stay together; the
+   payment grid keeps its label and repeats its header row if it has to
+   split; the legend is never split. */
+.account-head { break-inside: avoid; }
+.payment-block { break-inside: avoid; }
+
+/* -------------------------------------------------------- field table */
+/* ACCOUNT DETAILS: one label/value per 23pt row, full width. */
+
+table.field-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 0.6pt solid var(--border-outer);
+  margin: 0 0 15.3pt 0;
+}
+table.field-table tr { break-inside: avoid; }
+table.field-table tr + tr td { border-top: 0.4pt solid var(--border-inner); }
+table.field-table td {
+  height: 23pt;
+  padding: 0 10.8pt 0 10.4pt;
+  vertical-align: middle;
+  font-family: var(--font-body);
+  font-size: 9pt;
+  font-weight: 400;
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+}
+table.field-table td.field-label { width: 50%; }
+table.field-table td.field-value { width: 50%; text-align: right; }
+
+/* ------------------------------------------------------ payment grid */
+
+.payment-status { margin-bottom: 7.7pt; }
+
+.payment-history-label {
+  font-family: var(--font-body);
+  font-size: 9pt;
+  color: var(--text-primary);
+  margin: 0 6pt 2pt 6pt;
+}
+
+table.payment-grid {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 0.6pt solid var(--border-outer);
+  font-family: var(--font-body);
+  font-size: 7.3pt;
+  margin: 0;
+}
+table.payment-grid thead { display: table-header-group; }
+table.payment-grid tr { break-inside: avoid; }
+table.payment-grid th,
+table.payment-grid td {
+  height: 20pt;
+  padding: 0 1pt;
+  text-align: center;
+  vertical-align: middle;
+  border: 0.4pt solid var(--border-inner);
+  overflow-wrap: anywhere;
+}
+table.payment-grid th {
+  background: var(--grid-head-bg);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+table.payment-grid td { font-weight: 400; color: #000000; }
+
+table.legend-box {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 0.6pt solid var(--border-outer);
+  margin: 6pt 0 10pt 0;
+  break-inside: avoid;
+}
+table.legend-box td {
+  padding: 0 11pt;
+  font-family: var(--font-body);
+  font-size: 7.3pt;
+  line-height: 19pt;
+  color: var(--text-primary);
+  vertical-align: top;
+}
+
+/* ------------------------------------------------------------ enquiries */
+
+.note {
+  font-family: var(--font-body);
+  font-size: 7.8pt;
+  color: var(--text-muted);
+  margin: 1pt 6pt 5pt 6pt;
+}
+
+/* ---------------------------------------------------------- disclaimer */
+
+.disclaimer { margin: 21.5pt 6pt 0 6pt; break-inside: avoid; }
+.disclaimer .end-of-report {
+  font-family: var(--font-body);
+  text-align: center;
+  font-weight: 700;
+  font-size: 10pt;
+  color: var(--text-primary);
+  border-top: 0.6pt solid var(--border-inner);
+  border-bottom: 0.6pt solid var(--border-inner);
+  padding: 9.5pt 0 7.5pt 0;
+  margin-bottom: 12pt;
+}
+.disclaimer p {
+  font-family: var(--font-body);
+  font-size: 7.2pt;
+  line-height: 11pt;
+  color: var(--text-muted);
+  margin: 0;
+}
+.disclaimer p + p { margin-top: 0; }
+
+.empty-state {
+  font-family: var(--font-body);
+  font-size: 9pt;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0 6pt;
+  padding: 4pt 0 6pt 0;
+}

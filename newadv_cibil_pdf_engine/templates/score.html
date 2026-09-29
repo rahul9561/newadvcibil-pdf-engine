@@ -1,0 +1,41 @@
+{% if score %}
+<div class="score-panel avoid-break">
+  <div class="score-gauge">
+    <svg width="173.2pt" height="120pt" viewBox="0 0 173.2 120" xmlns="http://www.w3.org/2000/svg">
+      {% for band in score.bands %}
+      <path d="{{ band.path }}" fill="{{ band.color }}" stroke="#ffffff" stroke-width="0.8" />
+      {% endfor %}
+      <line x1="{{ score.cx }}" y1="{{ score.cy }}" x2="{{ score.needle_x }}" y2="{{ score.needle_y }}"
+            stroke="#26282a" stroke-width="2.2" stroke-linecap="round" />
+      <circle cx="{{ score.cx }}" cy="{{ score.cy }}" r="4.2" fill="#26282a" />
+    </svg>
+    <div class="score-range-min">{{ score.range_min }}</div>
+    <div class="score-range-max">{{ score.range_max }}</div>
+    <div class="score-value">{{ score.value }}</div>
+  </div>
+  <div class="score-text">
+    <p class="score-hello">Hello, {{ consumer.name }}</p>
+    <p class="score-asof">Your CIBIL Score is {{ score.value }} as of Date : {{ score.date }}</p>
+    <p class="score-explainer">CIBIL Score is a 3 digit numeric summary of your credit history &amp; ranges from {{ score.range_min }} to {{ score.range_max }}.</p>
+  </div>
+</div>
+
+<div class="score-body">
+  <p>
+    This section reflects your CIBIL Score, which is widely used by loan providers to evaluate loan
+    applications. Your score ranges between {{ score.range_min }} and {{ score.range_max }}, and is
+    calculated based on the information available in the &ldquo;Accounts&rdquo; and &ldquo;Enquiry&rdquo;
+    section of your CIBIL Report. The closer your score is to {{ score.range_max }}, the more confidence
+    the lender will have in your ability to repay the loan. Higher your score, the better chances of your
+    application getting approved.
+  </p>
+  <p>Please note in some cases you might be displayed a CIBIL Score of &ldquo;NH&rdquo; which indicates one of the following 3 things:</p>
+  <ol>
+    <li>You have a credit card or loan account, but no credit activity in the last three years.</li>
+    <li>Lenders may have made enquiries, but you do not have any credit activity.</li>
+    <li>You only have add-on credit cards, and no credit exposure.</li>
+  </ol>
+</div>
+{% else %}
+<div class="empty-state">No CIBIL score is available for this consumer.</div>
+{% endif %}

@@ -1,0 +1,23 @@
+<h2 class="section-heading">Contact Details</h2>
+{% if contact.phones %}
+<div class="card">
+  {% for phone in contact.phones %}
+  <div class="card-row">
+    <div class="card-cell">
+      <span class="detail-label">Telephone Number Type</span>
+      <span class="detail-value">{{ phone.type_label }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">Telephone Number</span>
+      <span class="detail-value">{{ phone.number }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">Telephone Extension</span>
+      <span class="detail-value">{{ phone.extension }}</span>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">No telephone details are available.</div>
+{% endif %}

@@ -1,0 +1,96 @@
+<h2 class="section-heading">All Accounts</h2>
+
+{% macro account_entry(acc) %}
+<div class="account">
+  <div class="account-head">
+    <div class="summary-row">
+      <div class="summary-cell">
+        <span class="detail-label">Member Name</span>
+        <span class="detail-value">{{ acc.member_name }}</span>
+      </div>
+      <div class="summary-cell">
+        <span class="detail-label">Account Type</span>
+        <span class="detail-value">{{ acc.account_type_label }}</span>
+      </div>
+      <div class="summary-cell">
+        <span class="detail-label">Account Number</span>
+        <span class="detail-value">{{ acc.account_number }}</span>
+      </div>
+      <div class="summary-cell">
+        <span class="detail-label">Ownership</span>
+        <span class="detail-value">{{ acc.ownership_label }}</span>
+      </div>
+    </div>
+
+    <h3 class="subheading-muted">Account Details</h3>
+    <table class="field-table">
+      {% for label, value in acc.detail_rows %}
+      <tr>
+        <td class="field-label">{{ label }}</td>
+        <td class="field-value">{{ value }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <div class="payment-block">
+    <h3 class="subheading-muted">Payment Status</h3>
+    <div class="card payment-status">
+      <div class="card-row">
+        <div class="card-cell">
+          <span class="detail-label">Payment Start Date</span>
+          <span class="detail-value">{{ acc.payment_start_date }}</span>
+        </div>
+        <div class="card-cell">
+          <span class="detail-label">Payment End Date</span>
+          <span class="detail-value">{{ acc.payment_end_date }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if acc.has_payment_history %}
+  <div class="payment-block">
+    <div class="payment-history-label">Payment History</div>
+    <table class="payment-grid">
+      <thead>
+        <tr>
+          <th>Year</th>
+          {% for m in acc.month_headers %}<th>{{ m }}</th>{% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for year, cells in acc.payment_rows %}
+        <tr>
+          <td>{{ year }}</td>
+          {% for cell in cells %}<td>{{ cell if cell is not none else "" }}</td>{% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+  <table class="legend-box">
+    {% for left, right in accounts.legend_rows %}
+    <tr><td>{{ left }}</td><td>{{ right }}</td></tr>
+    {% endfor %}
+  </table>
+</div>
+{% endmacro %}
+
+{% if accounts.total_count == 0 %}
+<div class="empty-state">No credit accounts are reported for this consumer.</div>
+{% else %}
+
+{% if accounts.open_accounts %}
+<div class="subsection-heading"><span class="dot dot--open"></span>Open Accounts</div>
+{% for acc in accounts.open_accounts %}{{ account_entry(acc) }}{% endfor %}
+{% endif %}
+
+{% if accounts.closed_accounts %}
+<div class="subsection-heading"><span class="dot dot--closed"></span>Closed Accounts</div>
+{% for acc in accounts.closed_accounts %}{{ account_entry(acc) }}{% endfor %}
+{% endif %}
+
+{% endif %}

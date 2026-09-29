@@ -1,0 +1,41 @@
+{% include "base.html" %}
+
+<div class="logo"><img src="{{ logo_src }}" alt="CIBIL - Part of TransUnion"></div>
+
+<div class="report-title-row">
+  <h1 class="report-title">CIBIL Score &amp; Report</h1>
+  <div class="report-title-meta">
+    <div>Control Number : {{ control_number }}</div>
+    <div>Date : {{ report_date }}</div>
+  </div>
+</div>
+
+{% include "score.html" %}
+
+{% include "consumer.html" %}
+{% include "identification.html" %}
+{% include "addresses.html" %}
+
+{% include "contact.html" %}
+{% include "email.html" %}
+{% include "employment.html" %}
+
+{% include "accounts.html" %}
+
+{% include "enquiries.html" %}
+
+{% if include_disclaimer %}
+<div class="disclaimer">
+  <div class="end-of-report">End of report</div>
+  <p>
+    Disclaimer: All information contained in this credit report has been collated by TransUnion CIBIL
+    Limited (TU CIBIL) based on information provided/submitted by its various members (&ldquo;Members&rdquo;), as part
+    of periodic data submission, and Members are required to ensure accuracy, completeness and veracity of
+    the information submitted. The credit report is generated using the proprietary search and match logic
+    of TU CIBIL. In case of any discrepancy in personal or account information pertaining to loan accounts /
+    credit cards, the concerned financial institution or credit card company may also be contacted for the
+    required clarification.
+  </p>
+  <p>COPYRIGHT {{ copyright_year }} TRANSUNION CIBIL. ALL RIGHTS RESERVED. For more information, please visit our website at www.cibil.com</p>
+</div>
+{% endif %}

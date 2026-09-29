@@ -1,0 +1,27 @@
+<h2 class="section-heading">Address Details</h2>
+{% if consumer.addresses %}
+<div class="card card--inset9 card--address">
+  {% for addr in consumer.addresses %}
+  <div class="card-row">
+    <div class="card-cell">
+      <span class="detail-label">Address</span>
+      <span class="detail-value">{{ addr.lines }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">Category</span>
+      <span class="detail-value">{{ addr.category_label }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">Residence Code</span>
+      <span class="detail-value">{{ addr.residence_code_label }}</span>
+    </div>
+    <div class="card-cell">
+      <span class="detail-label">Date Reported</span>
+      <span class="detail-value">{{ addr.date_reported }}</span>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">No address details are available.</div>
+{% endif %}
